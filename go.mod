@@ -1,4 +1,4 @@
-module github.com/Tsubasa-2005/sumaregi-go
+module github.com/generalworksinc/sumaregi-go
 
 go 1.23.0
 
