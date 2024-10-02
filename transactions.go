@@ -4,6 +4,7 @@ import (
 	"context"
 	"net/http"
 	"path"
+	"strings"
 
 	"github.com/google/go-querystring/query"
 )
@@ -16,6 +17,12 @@ func (c *Client) GetTransactions(ctx context.Context, opts GetTransactionsOpts) 
 	var result GetTransactionsResponse
 
 	v, err := query.Values(opts)
+
+	if len(opts.Fields) > 0 {
+		fields := strings.Join(opts.Fields, ",")
+		v.Set("fields", fields)
+	}
+
 	if err != nil {
 		return nil, err
 	}
