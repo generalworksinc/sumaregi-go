@@ -17,14 +17,13 @@ func (c *Client) GetTransactions(ctx context.Context, opts GetTransactionsOpts) 
 	var result GetTransactionsResponse
 
 	v, err := query.Values(opts)
+	if err != nil {
+		return nil, err
+	}
 
 	if len(opts.Fields) > 0 {
 		fields := strings.Join(opts.Fields, ",")
 		v.Set("fields", fields)
-	}
-
-	if err != nil {
-		return nil, err
 	}
 	err = c.call(ctx, APIPathTransactions, http.MethodGet, v, nil, &result)
 	if err != nil {
