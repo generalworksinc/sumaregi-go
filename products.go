@@ -3,6 +3,7 @@ package sumaregi
 import (
 	"context"
 	"net/http"
+	"strings"
 
 	"github.com/google/go-querystring/query"
 )
@@ -18,6 +19,12 @@ func (c *Client) GetProducts(ctx context.Context, opts GetProductsOpts) (*GetPro
 	if err != nil {
 		return nil, err
 	}
+
+	if len(opts.Fields) > 0 {
+		fields := strings.Join(opts.Fields, ",")
+		v.Set("fields", fields)
+	}
+
 	err = c.call(ctx, APIPathProducts, http.MethodGet, v, nil, &result)
 	if err != nil {
 		return nil, err
