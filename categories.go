@@ -33,13 +33,13 @@ func (c *Client) GetCategories(ctx context.Context, opts GetCategoriesOpts) (*Ge
 	return &result, nil
 }
 
-func (c *Client) PostProducts(ctx context.Context, params PostProductsParams) (*PostProductsResponse, error) {
-	var result PostProductsResponse
+// func (c *Client) PostProducts(ctx context.Context, params PostProductsParams) (*PostProductsResponse, error) {
+// 	var result PostProductsResponse
 
-	err := c.call(ctx, APIPathProducts, http.MethodPost, nil, params, &result)
-	if err != nil {
-		return nil, err
-	}
+// 	err := c.call(ctx, APIPathProducts, http.MethodPost, nil, params, &result)
+// 	if err != nil {
+// 		return nil, err
+// 	}
 
-	return &result, nil
-}
+// 	return &result, nil
+// }
