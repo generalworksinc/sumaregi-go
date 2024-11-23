@@ -10,10 +10,10 @@ type GetCategoriesResponse []struct {
 	TaxDivision        string `json:"taxDivision"`
 	PointNotApplicable string `json:"pointNotApplicable"`
 	TaxFreeDivision    string `json:"taxFreeDivision"`
-	ReduceTaxId        string `json:"reduceTaxId"`
+	ReduceTaxID        string `json:"reduceTaxId"`
 	Color              string `json:"color"`
-	CategoryGroupId    string `json:"categoryGroupId"`
-	ParentCategoryId   string `json:"parentCategoryId"`
+	CategoryGroupID    string `json:"categoryGroupId"`
+	ParentCategoryID   string `json:"parentCategoryId"`
 	Level              string `json:"level"`
 	Tag                string `json:"tag"`
 	InsDateTime        string `json:"insDateTime"`
