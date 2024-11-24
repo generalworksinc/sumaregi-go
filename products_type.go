@@ -115,21 +115,21 @@ type PostProductsResponse struct {
 	OrderSetting struct {
 		ProductID             string `json:"productId"`
 		ContinuationDivision  string `json:"continuationDivision"`
-		OrderStatusDivision   int    `json:"orderStatusDivision"`
+		OrderStatusDivision   string `json:"orderStatusDivision"`
 		OrderNoReasonDivision string `json:"orderNoReasonDivision"`
 		OrderLimitAmount      string `json:"orderLimitAmount"`
-		OrderSupplierEditable int    `json:"orderSupplierEditable"`
-		PbDivision            int    `json:"pbDivision"`
-		DisplayFlag           int    `json:"displayFlag"`
+		OrderSupplierEditable string `json:"orderSupplierEditable"`
+		PbDivision            string `json:"pbDivision"`
+		DisplayFlag           string `json:"displayFlag"`
 		OrderUnit             struct {
-			Division int    `json:"division"`
+			Division string `json:"division"`
 			Num      string `json:"num"`
 			Name     string `json:"name"`
 		} `json:"orderUnit"`
 		Stores []struct {
 			StoreID          string `json:"storeId"`
 			OrderLimitAmount string `json:"orderLimitAmount"`
-			DisplayFlag      int    `json:"displayFlag"`
+			DisplayFlag      string `json:"displayFlag"`
 		} `json:"stores"`
 	} `json:"orderSetting"`
 }
