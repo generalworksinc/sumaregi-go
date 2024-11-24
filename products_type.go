@@ -48,8 +48,8 @@ type PostProductsResponse struct {
 	ProductCode             string `json:"productCode"`
 	ProductName             string `json:"productName"`
 	ProductKana             string `json:"productKana"`
-	TaxDivision             int    `json:"taxDivision"`
-	ProductPriceDivision    int    `json:"productPriceDivision"`
+	TaxDivision             string `json:"taxDivision"`
+	ProductPriceDivision    string `json:"productPriceDivision"`
 	Price                   string `json:"price"`
 	CustomerPrice           string `json:"customerPrice"`
 	Cost                    string `json:"cost"`
@@ -63,16 +63,16 @@ type PostProductsResponse struct {
 	URL                     string `json:"url"`
 	PrintReceiptProductName string `json:"printReceiptProductName"`
 	DisplaySequence         string `json:"displaySequence"`
-	DisplayFlag             int    `json:"displayFlag"`
-	Division                int    `json:"division"`
+	DisplayFlag             string `json:"displayFlag"`
+	Division                string `json:"division"`
 	ProductOptionGroupID    string `json:"productOptionGroupId"`
-	SalesDivision           int    `json:"salesDivision"`
-	StockControlDivision    int    `json:"stockControlDivision"`
-	PointNotApplicable      int    `json:"pointNotApplicable"`
-	TaxFreeDivision         int    `json:"taxFreeDivision"`
-	CalcDiscount            int    `json:"calcDiscount"`
+	SalesDivision           string `json:"salesDivision"`
+	StockControlDivision    string `json:"stockControlDivision"`
+	PointNotApplicable      string `json:"pointNotApplicable"`
+	TaxFreeDivision         string `json:"taxFreeDivision"`
+	CalcDiscount            string `json:"calcDiscount"`
 	StaffDiscountRate       string `json:"staffDiscountRate"`
-	UseCategoryReduceTax    int    `json:"useCategoryReduceTax"`
+	UseCategoryReduceTax    string `json:"useCategoryReduceTax"`
 	ReduceTaxID             string `json:"reduceTaxId"`
 	ReduceTaxPrice          string `json:"reduceTaxPrice"`
 	ReduceTaxCustomerPrice  string `json:"reduceTaxCustomerPrice"`
