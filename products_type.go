@@ -152,67 +152,67 @@ type GetProductsOpts struct {
 }
 
 type PostProductsParams struct {
-	CategoryID              string `json:"categoryId"`
-	ProductCode             string `json:"productCode"`
-	ProductName             string `json:"productName"`
-	ProductKana             string `json:"productKana"`
-	TaxDivision             string `json:"taxDivision"`
-	ProductPriceDivision    string `json:"productPriceDivision"`
-	Price                   string `json:"price"`
-	CustomerPrice           string `json:"customerPrice"`
-	Cost                    string `json:"cost"`
-	Attribute               string `json:"attribute"`
-	Description             string `json:"description"`
-	CatchCopy               string `json:"catchCopy"`
-	Size                    string `json:"size"`
-	Color                   string `json:"color"`
-	Tag                     string `json:"tag"`
-	GroupCode               string `json:"groupCode"`
-	URL                     string `json:"url"`
-	PrintReceiptProductName string `json:"printReceiptProductName"`
-	DisplaySequence         string `json:"displaySequence"`
-	DisplayFlag             string `json:"displayFlag"`
-	Division                string `json:"division"`
-	ProductOptionGroupID    int    `json:"productOptionGroupId"`
-	SalesDivision           string `json:"salesDivision"`
-	StockControlDivision    string `json:"stockControlDivision"`
-	PointNotApplicable      string `json:"pointNotApplicable"`
-	TaxFreeDivision         string `json:"taxFreeDivision"`
-	CalcDiscount            string `json:"calcDiscount"`
-	StaffDiscountRate       string `json:"staffDiscountRate"`
-	UseCategoryReduceTax    string `json:"useCategoryReduceTax"`
-	ReduceTaxID             string `json:"reduceTaxId"`
-	ReduceTaxPrice          string `json:"reduceTaxPrice"`
-	ReduceTaxCustomerPrice  string `json:"reduceTaxCustomerPrice"`
-	OrderPoint              string `json:"orderPoint"`
-	PurchaseCost            string `json:"purchaseCost"`
-	SupplierProductNo       string `json:"supplierProductNo"`
-	AppStartDateTime        string `json:"appStartDateTime"`
+	CategoryID              string  `json:"categoryId"`
+	ProductCode             *string `json:"productCode,omitempty"`
+	ProductName             string  `json:"productName"`
+	ProductKana             *string `json:"productKana,omitempty"`
+	TaxDivision             *string `json:"taxDivision,omitempty"`
+	ProductPriceDivision    *string `json:"productPriceDivision,omitempty"`
+	Price                   string  `json:"price"`
+	CustomerPrice           *string `json:"customerPrice,omitempty"`
+	Cost                    *string `json:"cost,omitempty"`
+	Attribute               *string `json:"attribute,omitempty"`
+	Description             *string `json:"description,omitempty"`
+	CatchCopy               *string `json:"catchCopy,omitempty"`
+	Size                    *string `json:"size,omitempty"`
+	Color                   *string `json:"color,omitempty"`
+	Tag                     *string `json:"tag,omitempty"`
+	GroupCode               *string `json:"groupCode,omitempty"`
+	URL                     *string `json:"url,omitempty"`
+	PrintReceiptProductName *string `json:"printReceiptProductName,omitempty"`
+	DisplaySequence         *string `json:"displaySequence,omitempty"`
+	DisplayFlag             *string `json:"displayFlag,omitempty"`
+	Division                *string `json:"division,omitempty"`
+	ProductOptionGroupID    *int    `json:"productOptionGroupId,omitempty"`
+	SalesDivision           *string `json:"salesDivision,omitempty"`
+	StockControlDivision    *string `json:"stockControlDivision,omitempty"`
+	PointNotApplicable      *string `json:"pointNotApplicable,omitempty"`
+	TaxFreeDivision         *string `json:"taxFreeDivision,omitempty"`
+	CalcDiscount            *string `json:"calcDiscount,omitempty"`
+	StaffDiscountRate       *string `json:"staffDiscountRate,omitempty"`
+	UseCategoryReduceTax    *string `json:"useCategoryReduceTax,omitempty"`
+	ReduceTaxID             *string `json:"reduceTaxId,omitempty"`
+	ReduceTaxPrice          *string `json:"reduceTaxPrice,omitempty"`
+	ReduceTaxCustomerPrice  *string `json:"reduceTaxCustomerPrice,omitempty"`
+	OrderPoint              *string `json:"orderPoint,omitempty"`
+	PurchaseCost            *string `json:"purchaseCost,omitempty"`
+	SupplierProductNo       *string `json:"supplierProductNo,omitempty"`
+	AppStartDateTime        *string `json:"appStartDateTime,omitempty"`
 	ReserveItems            []struct {
 		No    string `json:"no"`
 		Value string `json:"value"`
-	} `json:"reserveItems"`
+	} `json:"reserveItems,omitempty"`
 	Prices []struct {
 		StoreID       string `json:"storeId"`
 		PriceDivision int    `json:"priceDivision"`
 		StartDate     string `json:"startDate"`
 		EndDate       string `json:"endDate"`
 		Price         string `json:"price"`
-	} `json:"prices"`
+	} `json:"prices,omitempty"`
 	Stores []struct {
 		StoreID              string `json:"storeId"`
 		ProductOptionGroupID string `json:"productOptionGroupId"`
 		AssignDivision       string `json:"assignDivision"`
-	} `json:"stores"`
+	} `json:"stores,omitempty"`
 	InventoryReservations []struct {
 		ReservationProductID string `json:"reservationProductId"`
 		ReservationAmount    string `json:"reservationAmount"`
-	} `json:"inventoryReservations"`
+	} `json:"inventoryReservations,omitempty"`
 	AttributeItems []struct {
 		Code string `json:"code"`
 		No   string `json:"no"`
-	} `json:"attributeItems"`
-	OrderSetting struct {
+	} `json:"attributeItems,omitempty"`
+	OrderSetting *struct {
 		ContinuationDivision  interface{} `json:"continuationDivision"`
 		OrderStatusDivision   string      `json:"orderStatusDivision"`
 		OrderNoReasonDivision string      `json:"orderNoReasonDivision"`
@@ -230,5 +230,5 @@ type PostProductsParams struct {
 			OrderLimitAmount string `json:"orderLimitAmount"`
 			DisplayFlag      string `json:"displayFlag"`
 		} `json:"stores"`
-	} `json:"orderSetting"`
+	} `json:"orderSetting,omitempty"`
 }
