@@ -48,7 +48,7 @@ func (c *Client) PostProducts(ctx context.Context, params PostProductsParams) (*
 func (c *Client) UpdateProducts(ctx context.Context, productId string, params PostProductsParams) (*PostProductsResponse, error) {
 	var result PostProductsResponse
 
-	err := c.call(ctx, path.Join(APIPathProducts, productId), http.MethodPost, nil, params, &result)
+	err := c.call(ctx, path.Join(APIPathProducts, productId), http.MethodPatch, nil, params, &result)
 	if err != nil {
 		return nil, err
 	}
