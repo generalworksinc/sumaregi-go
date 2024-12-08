@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"net/url"
 	"path"
@@ -73,6 +74,7 @@ func (c *Client) newRequest(
 		return nil, err
 	}
 	u.Path = path.Join(u.Path, c.config.ContractID, APIPathPos, apiPath)
+	log.Println("URL: ", u.String())
 	u.RawQuery = queryParams.Encode()
 	// request with context
 	req, err := http.NewRequest(method, u.String(), body)
