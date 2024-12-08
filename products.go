@@ -43,3 +43,14 @@ func (c *Client) PostProducts(ctx context.Context, params PostProductsParams) (*
 
 	return &result, nil
 }
+
+func (c *Client) UpdateProducts(ctx context.Context, productId string, params PostProductsParams) (*PostProductsResponse, error) {
+	var result PostProductsResponse
+
+	err := c.call(ctx, APIPathProducts+"/"+productId, http.MethodPost, nil, params, &result)
+	if err != nil {
+		return nil, err
+	}
+
+	return &result, nil
+}
