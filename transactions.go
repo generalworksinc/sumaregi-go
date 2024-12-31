@@ -4,6 +4,7 @@ import (
 	"context"
 	"net/http"
 	"path"
+	"strings"
 
 	"github.com/google/go-querystring/query"
 )
@@ -17,6 +18,11 @@ func (c *Client) GetTransactions(ctx context.Context, opts GetTransactionsOpts) 
 	v, err := query.Values(opts)
 	if err != nil {
 		return nil, err
+	}
+
+	if len(opts.Fields) > 0 {
+		fields := strings.Join(opts.Fields, ",")
+		v.Set("fields", fields)
 	}
 	err = c.call(ctx, APIPathTransactions, http.MethodGet, v, nil, &result)
 	if err != nil {
